@@ -42,7 +42,7 @@ class ThemeClassifier():
         
         # Run Model
         theme_output = self.theme_classifier(
-            script_batches[:2],
+            script_batches,
             self.theme_list,
             multi_label=True
         )
@@ -67,7 +67,7 @@ class ThemeClassifier():
 
         # load Dataset
         df = load_subtitles_dataset(dataset_path)
-        df = df.head(2)
+        
         print(f"Loaded dataset shape: {df.shape}")
         
 
