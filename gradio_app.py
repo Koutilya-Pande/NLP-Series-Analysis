@@ -100,7 +100,7 @@ def main():
                         data_path = gr.Textbox(label="Data Path")
                         text_to_classify = gr.Textbox(label="Text to Classify")
                         classify_text_button = gr.Button("Classify Jutsu")
-                        classify_text_button.click(classify_jutsu, inputs=[text_classification_model,data_path,], outputs=[text_classification_output])
+                        classify_text_button.click(classify_jutsu, inputs=[text_classification_model,data_path,text_to_classify], outputs=[text_classification_output])
     
 
     iface.launch(share=True)
