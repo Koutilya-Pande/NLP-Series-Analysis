@@ -56,6 +56,7 @@ def classify_jutsu(text_classification_model,data_path,text_to_classify):
                                        data_path = data_path,
                                        huggingface_token = os.getenv("huggingface_token") )
     output = jutsu_classifier.classify_jutsu(text_to_classify)
+    output = output[0]
     return output
 
 def main():
