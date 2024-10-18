@@ -155,10 +155,11 @@ class JutsuClassifier():
             return "Taijutsu"
     
 
-    def load_model(self,model_path):
-        
+    def load_model(self, model_path):
         model = pipeline("text-classification",
-                         model= model_path, return_all_scores=True)
+                         model=model_path,
+                         device=0 if self.device == 'cuda' else -1,
+                         top_k=None)  # Use top_k instead of return_all_scores
         return model
     def postprocess_output(self, model_output):
         output = []
@@ -167,9 +168,14 @@ class JutsuClassifier():
             output.append(label)
         return output
     def classify_jutsu(self, text):
+        # Ensure the input is a list
+        if isinstance(text, str):
+            text = [text]  # Wrap the single string in a list
+
         model_output = self.model(text)
         prediction = self.postprocess_output(model_output)
         return prediction
 
 
         
+
