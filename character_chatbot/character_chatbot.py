@@ -18,10 +18,10 @@ class CharacterChatbot:
     def __init__(self, 
                  model_path,
                  data_path="/content/NLP-Series-Analysis/data/naruto.csv",
-                 hugging_face_token=None):
+                 huggingface_token=None):
         self.model_path = model_path
         self.data_path = data_path
-        self.hugging_face_token = hugging_face_token
+        self.huggingface_token = huggingface_token
         self.base_model_path = "meta-llama/Llama-3.2-3B-Instruct"
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
