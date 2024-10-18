@@ -25,8 +25,8 @@ class CharacterChatbot:
         self.base_model_path = "meta-llama/Llama-3.2-3B-Instruct"
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
-        if self.hugging_face_token is not None:
-            huggingface_hub.login(self.hugging_face_token)
+        if self.huggingface_token is not None:
+            huggingface_hub.login(self.huggingface_token)
 
         if huggingface_hub.repo_exists(self.model_path):
             self.model = self.load_model(self.model_path)
