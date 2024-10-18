@@ -42,6 +42,7 @@ class NamedEntityRecognizer:
 
         # Load Dataset
         df = load_subtitles_dataset(dataset_path)
+        
         print(f"Dataset loaded with {len(df)} records.")  # Print the number of records loaded
        
 

@@ -4,7 +4,11 @@ from utils.data_loader import load_subtitles_dataset
 import pandas as pd
 import os
 from character_network import CharacterNetworkGenerator, NamedEntityRecognizer
+from text_classification import JutsuClassifier
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 def get_themes(theme_list_str, subtitles_path, save_path):
     # Removed print statements for terminal output
@@ -47,6 +51,12 @@ def get_character_network(subtitles_path,ner_path):
 
     return html
 
+def classify_jutsu(text_classification_model,data_path,text_to_classify):
+    jutsu_classifier = JutsuClassifier(model_path = text_classification_model,
+                                       data_path = data_path,
+                                       huggingface_token = os.getenv("huggingface_token") )
+    output = jutsu_classifier.classify_jutsu(text_to_classify)
+    return output
 
 def main():
 
@@ -77,6 +87,20 @@ def main():
                         ner_path = gr.Textbox(label="NERs save path")
                         get_network_graph_button = gr.Button("Get Character Network")
                         get_network_graph_button.click(get_character_network, inputs=[subtitles_path,ner_path], outputs=[network_html])
+
+        # Jutsu Classification with LLMs
+        with gr.Row():
+            with gr.Column():
+                gr.HTML("<h1>Jutsu Classification with LLMs</h1>")
+                with gr.Row():
+                    with gr.Column():
+                        text_classification_output = gr.Textbox(label="Jutsu Classification")
+                    with gr.Column():
+                        text_classification_model = gr.Textbox(label="Model Path")
+                        data_path = gr.Textbox(label="Data Path")
+                        text_to_classify = gr.Textbox(label="Text to Classify")
+                        classify_text_button = gr.Button("Classify Jutsu")
+                        classify_text_button.click(classify_jutsu, inputs=[text_classification_model,data_path,], outputs=[text_classification_output])
     
 
     iface.launch(share=True)
