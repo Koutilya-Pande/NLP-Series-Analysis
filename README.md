@@ -6,12 +6,6 @@ This project empowers users to analyze their favorite series using Natural Langu
 - [Overview](#overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Models Breakdown](#models-breakdown)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
