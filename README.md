@@ -43,7 +43,7 @@ This project leverages modern NLP techniques to analyze series content, such as 
 - **Languages**: Python
 - **Libraries**: Spacy, Hugging Face Transformers, NLTK, Scrapy
 - **Models**: Llama 3.2-3B-instruct, BERT, DistilBert, bart-large-mnli(Zero-Shot Classification)
-- **Visualization**: NetworkX, PyViz
+- **Visualization**: NetworkX, PyViz, Matplotlib
 - **Web Framework**: Gradio (for GUI)
 
 ---
