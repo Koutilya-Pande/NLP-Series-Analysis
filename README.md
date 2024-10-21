@@ -6,6 +6,8 @@ This project empowers users to analyze their favorite series using Natural Langu
 - [Overview](#overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
 
 ---
 
@@ -43,3 +45,71 @@ This project leverages modern NLP techniques to analyze series content, such as 
 - **Web Framework**: Gradio (for GUI)
 
 ---
+## Project Structure
+```
+/Naruto NLP/
+│
+├── character_chatbot/
+│   ├── character_chatbot.py
+│   ├── chatbot_developement.ipynb
+│   ├── __init__.py
+│
+├── character_network/
+│   ├── character_network_generation.py
+│   ├── character_network_generatir.ipynb
+│   ├── named_entity_recognizer.py
+│   ├── naruto.html
+│   ├── __init__.py
+│
+├── gradio_app.py
+├── requirements.txt
+│
+├── text_classification/
+│   ├── cleaner.py
+│   ├── jutsu_classifier.ipynb
+│   ├── jutsu_classifier.py
+│   ├── trainer.py
+│   ├── training_utils.py
+│   ├── __init__.py
+│
+├── theme_classifier/
+│   ├── theme_classification_developement.ipynb
+│   ├── theme_classifier.py
+│   ├── __init__.py
+│
+├── utils/
+│   ├── data_loader.py
+│   ├── __init__.py
+│
+├── web_scrape/
+│   ├── jujutsu.py
+│
+└── README.md
+```
+## Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/Koutilya-Pande/NLP-Series-Analysis.git
+cd your_project_directory
+ ```
+Create a virtual environment (optional but recommended):
+
+```
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate 
+```
+Install dependencies:
+
+Make sure you have all the necessary libraries installed by running:
+
+```pip install -r requirements.txt```
+
+Usage
+
+To run the Gradio web application:
+
+
+```python gradio_app.py```
+Navigate to the local web URL provided in the terminal to use the web interface.
