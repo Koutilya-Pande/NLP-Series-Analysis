@@ -1,4 +1,6 @@
-# Analyze Your Favorite Series with NLP
+# Situation
+In the era of content consumption, analyzing and understanding narratives in series has become increasingly important. Fans and researchers alike want to dive deeper into character interactions, themes, and plot developments. However, existing tools often lack the capability to comprehensively analyze series content and facilitate interactive engagement with characters.
+## Analyze Your Favorite Series with NLP
 
 This project empowers users to analyze their favorite series using Natural Language Processing (NLP) techniques and Large Language Models (LLMs). From scraping data to building chatbots, it provides a comprehensive approach to exploring characters, themes, and textual classifications. By integrating models into an intuitive web interface with Gradio, this project combines cutting-edge NLP technology with interactive tools.
 
